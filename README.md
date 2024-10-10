@@ -1,7 +1,4 @@
-<img width="1104" alt="Screenshot 2024-10-10 at 08 27 51" src="https://github.com/user-attachments/assets/ae6aea65-0050-4f10-aea6-8499c9085bf0"># ENSEA_ESE_2425_Networks
-TP Bus et Réseaux
-
-## 1. Présentation!
+## 1. Présentation
 Le but de cette série de TP est de mettre en place l'ensemble des composants suivant: </br>
 
 <img width="1104" alt="Screenshot 2024-10-10 at 08 27 51" src="https://github.com/user-attachments/assets/ae6aea65-0050-4f10-aea6-8499c9085bf0"># ENSEA_ESE_2425_Networks
@@ -22,7 +19,39 @@ Le code du STM32 sera écrit en langage C, en utilisant la bibliothèque HAL.
 
 Le BMP280 est un capteur de pression et température développé par Bosch.  A partir de la datasheet du BMP280, on identifie les éléments suivants:
 
-#### La table des adresses I2C Possible du composants:
-L'adresse de l'appareil sur 7 bits est 111011x.
-- 1110110 (0x76), SDO à la masse
-- 1110111 (0x77), SDO sur VDD_{IO}
+#### Adresses I²C possibles
+
+- 0x76 (SDO connecté à GND)
+- 0x77 (SDO connecté à V_DDIO)
+
+#### Identification du composant
+
+- Registre : 0xD0
+- Valeur : 0x58
+
+#### Mode normal
+
+- Registre : 0xF4
+- Valeur : '11' dans les bits 1 et 0
+
+#### Registres d'étalonnage
+
+- Plage : 0x88 à 0xA1
+- Noms : calib00 à calib25
+
+#### Registres de température
+
+- Registres : 0xFA (temp_msb), 0xFB (temp_lsb), 0xFC (temp_xlsb)
+- Format : 20 bits répartis sur 3 registres
+
+#### Registres de pression
+
+- Registres : 0xF7 (press_msb), 0xF8 (press_lsb), 0xF9 (press_xlsb)
+- Format : 20 bits répartis sur 3 registres
+
+#### Fonctions de calcul (format entier 32 bits)
+
+- Température : bmp280_compensate_T_int32(BMP280_S32_t adc_T)
+- Pression : bmp280_compensate_P_int32(BMP280_S32_t adc_P)
+
+Note : La fonction de température doit être appelée avant celle de pression.
