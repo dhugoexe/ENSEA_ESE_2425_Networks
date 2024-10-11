@@ -65,6 +65,10 @@ Note : La fonction de température doit être appelée avant celle de pression.
 - d'une liaison UART indépendante pour la communication avec le Raspberry (TP2)
 - d'une liaison CAN (TP4)
 
+```
+ printf("\r\nTest\r\n");
+```
+
   ![image](https://github.com/user-attachments/assets/634696e5-3728-4918-9c58-26e95e8df641)
 
 
