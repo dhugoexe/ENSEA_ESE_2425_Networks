@@ -83,4 +83,39 @@ Note : La fonction de température doit être appelée avant celle de pression.
 
 	printf("Res: %i \r\n", dataBuffer[0]);
   ```
+![image](https://github.com/user-attachments/assets/103ec964-def7-4f67-8a41-f51a49c39b00)
+
+### Vérifiez que le contenu du registre correct
+```
+/* USER CODE BEGIN 2 */
+  uint8_t  TX_Data[1]={BMP280_REG_ID};
+  uint8_t RX_Data[1];
+  printf("\r\nTest\r\n");
+
+  if (HAL_I2C_Master_Transmit(&hi2c2, BMP_280_ADDR, TX_Data, 1, HAL_MAX_DELAY)==HAL_OK)
+  	{
+  		if(HAL_I2C_Master_Receive(&hi2c2, BMP_280_ADDR, RX_Data, 1, HAL_MAX_DELAY)==HAL_OK)
+  		{
+  			printf("transmission OK");
+  			printf("Res: 0x%x \r\n",RX_Data[0]);
+  		}
+  		else
+  		{
+  			printf("erreur de reception\n\r");
+  			return 0;
+  		}
+  	}
+  	else
+  	{
+  		printf("Erreur de transmission\n\r");
+  		return 0;
+  	}
+
+  /* USER CODE END 2 */
+```
+
+
+
+![image](https://github.com/user-attachments/assets/f747d370-21a3-4244-b433-55396e2bcd5a)
+
 
