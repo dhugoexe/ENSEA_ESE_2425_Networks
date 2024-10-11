@@ -48,10 +48,25 @@ Le BMP280 est un capteur de pression et température développé par Bosch.  A p
 
 - Registres : 0xF7 (press_msb), 0xF8 (press_lsb), 0xF9 (press_xlsb)
 - Format : 20 bits répartis sur 3 registres
-
+  
 #### Fonctions de calcul (format entier 32 bits)
 
 - Température : bmp280_compensate_T_int32(BMP280_S32_t adc_T)
 - Pression : bmp280_compensate_P_int32(BMP280_S32_t adc_P)
 
 Note : La fonction de température doit être appelée avant celle de pression.
+
+
+
+### 2.2 Setup du STM32
+#### Configuration du STM32
+- d'une liaison I²C. Si possible, on utilisera les broches compatibles avec l'empreinte arduino (broches PB8 et PB9) (Doc nucleo 64)
+- d'une UART sur USB (UART2 sur les broches PA2 et PA3) (Doc nucleo 64)
+- d'une liaison UART indépendante pour la communication avec le Raspberry (TP2)
+- d'une liaison CAN (TP4)
+
+  ![image](https://github.com/user-attachments/assets/634696e5-3728-4918-9c58-26e95e8df641)
+
+
+  
+
