@@ -68,5 +68,15 @@ Note : La fonction de température doit être appelée avant celle de pression.
   ![image](https://github.com/user-attachments/assets/634696e5-3728-4918-9c58-26e95e8df641)
 
 
-  
+  ```
+  status = HAL_I2C_Master_Transmit(&hi2c2, BSP280_ADDR, idRegister, sizeof(idRegister), -1);
+	do{
+		printf("status: %i \r\n", status);
+		status = HAL_I2C_Master_Receive(&hi2c2, BSP280_ADDR, dataBuffer, sizeof(dataBuffer), -1);
+		HAL_Delay(100);
+
+	}while(status != HAL_OK);
+
+	printf("Res: %i \r\n", dataBuffer[0]);
+  ```
 
