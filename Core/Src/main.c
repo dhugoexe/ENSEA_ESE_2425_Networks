@@ -164,6 +164,7 @@ int main(void)
 
 	if	(dataBuffer[0] == BMP280_MODE_NORMAL)
 	{
+
 		printf("BSP280 running in Normal Mode \r\n");
 	}else printf("Error waking up BSP280 \r\n");
 
