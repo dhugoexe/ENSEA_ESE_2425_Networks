@@ -115,7 +115,10 @@ Note : La fonction de température doit être appelée avant celle de pression.
 ```
 
 
-
+# verification de l'adresse ip
 ![image](https://github.com/user-attachments/assets/f747d370-21a3-4244-b433-55396e2bcd5a)
+# configuration
+![image](https://github.com/user-attachments/assets/ef9922d2-d59b-4dbe-af39-e9eed5393cd9)
+
 
 
