@@ -62,8 +62,11 @@ Note : La fonction de température doit être appelée avant celle de pression.
 #### Configuration du STM32
 Sous l’outil STM32CubeIDE, nous avons effectué les connexions suivantes :
 *Une liaison I²C1, en utilisant si possible les broches PB6 et PB7.
+
 *Une liaison UART2 sur USB, connectée aux broches PA2 et PA3.
+
 *Une liaison UART1 indépendante pour la communication avec le Raspberry Pi pour le TP2.
+
 *Une liaison CAN1 pour le TP4.
 ![image](https://github.com/user-attachments/assets/4864395a-db0e-4ead-8cf9-d92a33377c31)
 
