@@ -68,6 +68,7 @@ Sous l’outil STM32CubeIDE, nous avons effectué les connexions suivantes :
 *Une liaison UART1 indépendante pour la communication avec le Raspberry Pi pour le TP2.
 
 *Une liaison CAN1 pour le TP4.
+
 ![image](https://github.com/user-attachments/assets/4864395a-db0e-4ead-8cf9-d92a33377c31)
 
 
