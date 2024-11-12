@@ -71,6 +71,7 @@ Sous l’outil STM32CubeIDE, nous avons effectué les connexions suivantes :
 
 ![image](https://github.com/user-attachments/assets/4864395a-db0e-4ead-8cf9-d92a33377c31)
 
+Pour ce TP nous avons utulisé 2 pérepherique USART pour affichier les données sur Tera Terminal et le I2c1 pour la communication entre la carte STM32 et le capteur IMU 10DOF 
 
 ```
  printf("\r\nTest\r\n");
