@@ -159,34 +159,20 @@ Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58
   ```
 ![image](https://github.com/user-attachments/assets/103ec964-def7-4f67-8a41-f51a49c39b00)
 
-### Vérifiez que le contenu du registre correct
-```
-/* USER CODE BEGIN 2 */
-  uint8_t  TX_Data[1]={BMP280_REG_ID};
-  uint8_t RX_Data[1];
-  printf("\r\nTest\r\n");
 
-  if (HAL_I2C_Master_Transmit(&hi2c2, BMP_280_ADDR, TX_Data, 1, HAL_MAX_DELAY)==HAL_OK)
-  	{
-  		if(HAL_I2C_Master_Receive(&hi2c2, BMP_280_ADDR, RX_Data, 1, HAL_MAX_DELAY)==HAL_OK)
-  		{
-  			printf("transmission OK");
-  			printf("Res: 0x%x \r\n",RX_Data[0]);
-  		}
-  		else
-  		{
-  			printf("erreur de reception\n\r");
-  			return 0;
-  		}
-  	}
-  	else
-  	{
-  		printf("Erreur de transmission\n\r");
-  		return 0;
-  	}
+## TP2
+![Capture d'écran 2024-11-12 181032](https://github.com/user-attachments/assets/7fe05d56-f98b-4827-ba57-e6b1ae369b58)
 
-  /* USER CODE END 2 */
-```
+![Capture d'écran 2024-11-12 181532](https://github.com/user-attachments/assets/8657c7b7-f6c7-4c5b-bb61-f24a48c74135)
+
+![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/06bc0f44-fcbe-4310-811c-02cdfe0648b6)
+
+![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
+
+![Capture d'écran 2024-11-12 190059](https://github.com/user-attachments/assets/d4de8b78-dbfa-4f81-8358-7dc915261580)
+
+
+
 
 
 
