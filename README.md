@@ -93,6 +93,9 @@ Afin de simplifier le débogage de notre programme STM32, nous avons modifié le
 
 *Ce code définit la fonction PUTCHAR_PROTOTYPE, qui redirige chaque caractère de printf vers l’interface UART2. Lorsqu'un caractère est envoyé, la fonction utilise HAL_UART_Transmit pour l’écrire sur l’USART2, en attendant la fin de la transmission avant de passer au caractère suivant. Cela permet d’envoyer les sorties de printf sur UART, pour les afficher sur un terminal connecté par USB.
 
+## Test de la chaine de compilation et communication UART sur USB
+
+Pour pouvoir tester le programme de type écho, nous allons utiliser printf pour afficher le message suivant : "TESTtp1 Hedia et Hugo
 
 ```
  printf("\r\nTest\r\n");
