@@ -97,6 +97,17 @@ Afin de simplifier le débogage de notre programme STM32, nous avons modifié le
 
 Pour pouvoir tester le programme de type écho, nous allons utiliser printf pour afficher le message suivant : "TESTtp1 Hedia et Hugo
 
+![image](https://github.com/user-attachments/assets/ad31ac81-2c11-4da6-85fd-3c78fcba59a7)
+
+L'API HAL (Hardware Abstraction Layer) de ST fournit des fonctions pour gérer le bus I²C en mode Master, simplifiant les échanges de données avec des périphériques I²C. Deux fonctions principales sont disponibles : 
+
+*AL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout):  permet d’envoyer des données à un périphérique à une adresse donnée (DevAddress), 
+*HAL_I2C_Master_Receive : permet de recevoir des données de ce même périphérique. 
+
+Ces fonctions prennent en paramètres l'adresse du périphérique, un pointeur vers les données à transmettre ou recevoir (pData), la taille des données (Size), et un délai d'expiration (Timeout).
+
+
+
 ```
  printf("\r\nTest\r\n");
 ```
