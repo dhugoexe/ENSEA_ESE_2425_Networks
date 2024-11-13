@@ -161,6 +161,9 @@ Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58
 
 
 ## TP2
+
+<img width="842" alt="Screenshot 2024-10-18 at 09 16 22" src="https://github.com/user-attachments/assets/2594276c-15a5-4f70-a4be-41b8cf8f4cb5">
+
 ![Capture d'écran 2024-11-12 181032](https://github.com/user-attachments/assets/7fe05d56-f98b-4827-ba57-e6b1ae369b58)
 
 ![Capture d'écran 2024-11-12 181532](https://github.com/user-attachments/assets/8657c7b7-f6c7-4c5b-bb61-f24a48c74135)
@@ -174,10 +177,4 @@ Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58
 
 
 
-
-
-![image](https://github.com/user-attachments/assets/f747d370-21a3-4244-b433-55396e2bcd5a)
-
-
-<img width="842" alt="Screenshot 2024-10-18 at 09 16 22" src="https://github.com/user-attachments/assets/2594276c-15a5-4f70-a4be-41b8cf8f4cb5">
 
