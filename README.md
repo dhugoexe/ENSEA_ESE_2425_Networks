@@ -84,6 +84,11 @@ Dans ce TP, sous l’outil STM32CubeIDE, nous avons configuré les connexions su
 
 Ces connexions permettent d’assurer une transmission efficace des données pour l'affichage et la communication avec le capteur.
 
+## Redirection du printf
+
+Afin de simplifier le débogage de notre programme STM32, nous avons modifié le fichier stm32f4xx_hal_msp.c pour permettre à la fonction printf de transmettre ses chaînes de caractères via l’interface UART sur USB. Cette configuration rend possible l’affichage des messages de débogage directement sur le terminal.
+
+
 ```
  printf("\r\nTest\r\n");
 ```
