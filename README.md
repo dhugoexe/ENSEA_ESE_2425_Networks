@@ -128,7 +128,15 @@ La sélection du registre à lire se fait en envoyant (transmit) auparavant l'ad
 
 ## Communication avec le BMP280
 
-Avant de faire une mesure,il faut le configurer le BMP280 
+## *Identification du BMP280
+
+![image](https://github.com/user-attachments/assets/7d2fcb21-14ee-435a-b68b-c3738b40383a)
+
+Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58, correspondant à la même valeur que celle obtenue dans Tera Term.
+
+![image](https://github.com/user-attachments/assets/01a4f2e6-1cae-4f24-a7f4-bb6125334aea)
+
+
 
 
 ```
