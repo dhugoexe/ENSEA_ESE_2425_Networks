@@ -106,6 +106,29 @@ L'API HAL (Hardware Abstraction Layer) de ST fournit des fonctions pour gérer l
 
 Ces fonctions prennent en paramètres l'adresse du périphérique, un pointeur vers les données à transmettre ou recevoir (pData), la taille des données (Size), et un délai d'expiration (Timeout).
 
+## Adresse:
+HAL_I2C_Master_Transmit permet d'écire sur le bus, alors que HAL_I2C_Master_Receive permet de lire le bus. Ces 2 fonctions gère le bit R/W, mais il faut quand même lui laisser la place dans l'adresse I²C.
+L'adresse I²C est officiellement sur 7 bits. L'API HAL du STM32 demande des adresses I²C sur 8bits, le LSB étant réservé au bit de R/W.
+
+![image](https://github.com/user-attachments/assets/5c948f3f-9520-4077-99a6-b3a62a62f12a)
+
+## Transmit:
+Le maître drive seul le bus. Le premier octet transmis sera l'adresse de l'esclave, le second octet représente l'adresse du 1er registre à écrire. Les autres octets seront les données à transmettre.
+L'esclave valide chaque octet en forçant le ACK à zéro (dominant) au bon moment.
+
+![image](https://github.com/user-attachments/assets/4ee64dfc-ca60-41d0-91b1-2f3fb2ef1b9e)
+
+## Recive:
+
+Le maître drive le bus seulement pour l'adresse de l'esclave (1er octet). C'est ensuite l'esclave qui drive le bus pour permettre au maître de lire les données.
+Le maître valide chaque octet en forçant le ACK à zéro (dominant) au bon moment, sauf le dernier (Non ACK ou NACK)
+La sélection du registre à lire se fait en envoyant (transmit) auparavant l'adresse du registre à lire.
+
+![image](https://github.com/user-attachments/assets/05ca7e6d-84c3-4104-a583-4253dc1b623a)
+
+## Communication avec le BMP280
+
+Avant de faire une mesure,il faut le configurer le BMP280 
 
 
 ```
