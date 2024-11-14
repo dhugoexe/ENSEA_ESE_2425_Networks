@@ -162,6 +162,26 @@ Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58
 
 ## TP2
 
+L'objectif de ce TP est de mettre en place une communication entre une carte STM32 et un Raspberry Pi Zéro via une liaison série UART. Cette communication permettra de contrôler et monitorer différents périphériques de la carte STM32 depuis le Raspberry Pi.
+
+  ### 3.1 Configuration du rasperry
+Nous avons utilisé Rpi_imager pour installer Raspberry Pi OS Lite (32-bit) sur la carte SD. L'avantage de Rpi_imager est qu'il nous a permis de configurer directement :
+
+- Le hostname : rasperrypi-911
+- L'utilisateur : hugodevaux
+- Le mot de passe : .......
+- La connexion WiFi
+- L'activation SSH
+
+  ### 3.2 Premier démarrage
+Après avoir inséré la carte SD et alimenté le Raspberry, nous avons :
+
+Attendu environ 1 minute pour laisser le système démarrer
+Utilisé nmap pour scanner le réseau et trouver l'IP du Raspberry : 192.168.88.235
+Remarque: pour ce genre de configuration, il est judicieux d'attribué une IP statique au composant afin que l'IP de connexion soit toujours là même.
+
+Ensuite, on se connecte en SSH :
+
 <img width="842" alt="Screenshot 2024-10-18 at 09 16 22" src="https://github.com/user-attachments/assets/2594276c-15a5-4f70-a4be-41b8cf8f4cb5">
 
 ![Capture d'écran 2024-11-12 181032](https://github.com/user-attachments/assets/7fe05d56-f98b-4827-ba57-e6b1ae369b58)
