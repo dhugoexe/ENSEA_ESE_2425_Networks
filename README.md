@@ -164,6 +164,14 @@ Les paramètres de calibrage sont programmés dans la mémoire non volatile (NVM
 
 ![image](https://github.com/user-attachments/assets/c6a8c4d9-b60f-43e5-b81a-2f4940301df8)
 
+l'affichage de la pression a partir de la fonction BMP280_Pression, récupère la mesure de pression non compensée d’un capteur BMP280 via une communication I2C, puis calcule la pression compensée. Elle commence par définir une adresse de registre (0xF7) et l'envoie au capteur BMP280. En cas d’erreur de transmission, un message d’erreur est affiché. Ensuite, un tampon est alloué pour stocker les 3 octets de données de pression reçues du capteur. En cas d’erreur de réception, un message d’erreur est également affiché. meme pour la temperateur mais a partir de registre (0xFA)
+
+![image](https://github.com/user-attachments/assets/77ed4bd4-7f32-4c0a-b4dc-94592510151f)
+
+## Calcul des températures et des pression compensées
+
+
+
 
 
 
