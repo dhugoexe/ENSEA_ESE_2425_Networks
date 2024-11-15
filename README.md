@@ -332,7 +332,7 @@ Dans cette étape, nous avons activé le CAN1 et l'avons configuré en fonction 
 
 *aprés on a utulisé La variable TxHeader est une structure contenant les champs suivants, que vous devez remplir avant de faire appel à HAL_CAN_AddTxMessage:
 
-![image](https://github.com/user-attachments/assets/69ee88a2-35eb-456d-b069-a18ed8b01d17)
+![image](https://github.com/user-attachments/assets/90fa3503-7424-4e88-9c0b-06aabe6edf46)
 
 Voici un exemple de code simple pour commander le moteur et le faire tourner de 90° dans les deux sens :
 
