@@ -284,3 +284,32 @@ Composition de la trame :
 * Donnée D0 : Angle souhaité, entre 0° et 180° (si >180°, l'angle sera limité à 180°)
 * Donnée D1 : Représente le signe de l'angle
 
+Et le Mode manuel :
+Ce mode vous permet d'envoyer une trame CAN complexe pour contrôler :
+
+Le nombre de pas
+Le sens de rotation
+La vitesse du moteur
+![image](https://github.com/user-attachments/assets/849f8872-cc77-4abd-95be-ddb0f23f650f)
+
+La carte moteur est un peu capricieuse et ne semble tolérer qu'une vitesse CAN de 500kbit/s. Pensez à régler CubeMx en conséquence.
+Edit 2022: Il semble que ce soit surtout le ratio seg2/(seg1+seg2), qui détermine l'instant de décision, qui doit être aux alentours de 87%. pour cela on a coniguré le péripherque CAN a partir de site http://www.bittiming.can-wiki.info/ 
+
+Pour notre projet, nous avons une fréquence de 42 MHz et une vitesse de communication de la carte moteur de 500 kbit/s, comme indiqué dans l'image ci-dessous.
+
+![image](https://github.com/user-attachments/assets/eab2da42-3152-44b9-acbc-d370b974d251)
+
+ D'après le tableau de calcul, pour obtenir un débit de 500 kbit/s, il est nécessaire de configurer le Time Quanta dans le segment de bit 1 à 11 et dans le segment de bit 2 à 2.
+
+ ![image](https://github.com/user-attachments/assets/87ec74f5-8a07-42af-a370-6fc435600828)
+
+Dans cette étape, nous avons activé le CAN1 et l'avons configuré en fonction des résultats obtenus précédemment:
+ 
+ ![image](https://github.com/user-attachments/assets/3e35490f-6559-4e8f-8326-05d6874f2a8b)
+
+ 
+
+ 
+
+
+
