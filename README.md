@@ -274,6 +274,62 @@ Ci-dessous, la configuration SFTP:
 ## TP3 - Interface REST
 
 
+## TP3
+
+On commence par faire une route API, simple retournant simplement un message de bienvenue: 
+![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
+
+### 1.1 Exemple de route
+
+```
+@app.route('/api/welcome/', methods=['GET', 'POST', 'DELETE'])
+def api_welcome():
+    global welcome
+
+    if request.method == 'GET':
+        return jsonify({'data': welcome})
+
+    elif request.method == 'POST':
+        # Change sentence
+        received_data = request.get_json()
+        if 'sentence' in received_data:
+            welcome = received_data['sentence']
+            return jsonify({'data': welcome})
+        abort(400)
+
+    elif request.method == 'DELETE':
+        # Delete sentence
+        welcome = ""
+        return jsonify({'data': welcome})
+```
+
+
+Avec Flask (et FastAPI), on utilise pour chaque fonction un décodeur `@app.route`, pour indiquer qu'en cas de requête HTTP à l'url indiqué dans le décodeur, il faut executer cette fonction.
+Pa exemple `@app.route('/api/welcome/', methods=['GET', 'POST', 'DELETE'])`, indique que l'on autorise les méthodes GET, POST et DELETE, pour l'url baseUrl/api/welcome.
+Le décodeur est associé à la fonction, `welcome()`, qui sera executé à l'url.
+e role du fragment <int:index> dans l'url indique que cette partie de l'url correspond à une variable, ici on passe un entier. Utilisé pour faire des GET pour obtenir une donnée précise, ne nécéssitant pas de POST. 
+
+Ensuite, conformément au proptocole web (HTTP), on indique le type de retour:
+![image](https://github.com/user-attachments/assets/e164d4ae-227b-4d9e-8a26-4b59a2d408bc)
+
+![image](https://github.com/user-attachments/assets/18ea298b-eb2e-448d-a3af-274b879fb00e)
+
+
+
+![image](https://github.com/user-attachments/assets/b7a74638-c4d6-48cd-a77f-b82b6db066fc)
+![image](https://github.com/user-attachments/assets/39673bcc-b56e-4dff-a2a1-07241945a1f3)
+![image](https://github.com/user-attachments/assets/45cdbf3e-986b-4c73-a15b-86b125bb6462)
+
+
+![image](https://github.com/user-attachments/assets/588a33a7-e7a4-4beb-b79a-538624618db4)
+
+![image](https://github.com/user-attachments/assets/44034d09-ede3-4fe4-838d-3082284b2ae6)
+![image](https://github.com/user-attachments/assets/8444fca0-bc42-4912-a97a-fcdbeb6ab412)
+![image](https://github.com/user-attachments/assets/68cf3182-87c7-4f6e-8ee9-bfd45670d524)
+
+
+
+
 
 ## TP4 Bus CAN
 
