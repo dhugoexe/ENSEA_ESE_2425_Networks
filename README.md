@@ -217,6 +217,15 @@ Résultat : Les caractères tapés s'affichaient à l'écran, confirmant le bon 
 
 ![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
 
+## Port Série
+Nous allons boucler le port série du Raspberry Pi en connectant la pin RX (GPIO15) à la pin TX (GPIO14).
+
+![image](https://github.com/user-attachments/assets/45bc34ab-8509-4189-92c6-9a34baec4366)
+
+Pour tester la communication sur le port série de votre Raspberry Pi, nous allons utiliser un logiciel appelé minicom. Il vous permettra d'envoyer et de recevoir des données via le port série.
+
+
+
 
 ### 3.3 Communication avec le STM32
 
