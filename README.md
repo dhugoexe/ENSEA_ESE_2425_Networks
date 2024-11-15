@@ -162,6 +162,7 @@ Les paramètres de calibrage sont programmés dans la mémoire non volatile (NVM
 
 ![image](https://github.com/user-attachments/assets/d7ff87c1-2723-4d3d-a4ac-e59513f85355)
 
+![image](https://github.com/user-attachments/assets/c6a8c4d9-b60f-43e5-b81a-2f4940301df8)
 
 
 
