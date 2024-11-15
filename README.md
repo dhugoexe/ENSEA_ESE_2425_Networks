@@ -410,6 +410,14 @@ Voici un exemple de code simple pour commander le moteur et le faire tourner de 
 ![image](https://github.com/user-attachments/assets/4de9d2c3-1e82-4a14-81d1-fb89ef911127)
 
 ## Interfaçage avec le capteur
+Dans cette partie on a calcule la vitesse et l'angle a partir de la valeur de temperateur
+
+![image](https://github.com/user-attachments/assets/b3ff8186-35a8-46e0-9a30-9ae5e426e84b)
+
+
+
+
+
 
 
 
