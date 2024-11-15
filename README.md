@@ -219,10 +219,10 @@ Pour tester la communication sur le port série de votre Raspberry Pi, nous allo
 Pour vérifier le bon fonctionnement du port série, nous avons d'abord réalisé un test en loopback :
 TX (GPIO14) connecté à RX (GPIO15)
 
+![Capture d'écran 2024-11-12 190059](https://github.com/user-attachments/assets/d4de8b78-dbfa-4f81-8358-7dc915261580)
 
 Résultat : Les caractères tapés s'affichaient à l'écran, confirmant le bon fonctionnement du port série.
 
-![Capture d'écran 2024-11-12 190059](https://github.com/user-attachments/assets/d4de8b78-dbfa-4f81-8358-7dc915261580)
 
 
 ![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
