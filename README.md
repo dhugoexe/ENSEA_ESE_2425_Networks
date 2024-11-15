@@ -170,6 +170,9 @@ l'affichage de la pression a partir de la fonction BMP280_Pression, récupère l
 
 ## Calcul des températures et des pression compensées
 
+pour la calcule des températeur et des pressn compensées on a utulisé la datasheet du BMP280 le code permettant de compenser la température et la pression à l'aide des valeurs de l'étalonnage au format entier 32 bits.
+
+![image](https://github.com/user-attachments/assets/0d31e23f-4fc2-4e91-b62f-3794b6df1d5f)
 
 
 
