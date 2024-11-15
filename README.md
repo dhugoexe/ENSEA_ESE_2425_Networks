@@ -257,3 +257,30 @@ Ci-dessous, la configuration SFTP:
 <img width="602" alt="Screenshot 2024-11-15 at 11 33 17" src="https://github.com/user-attachments/assets/56eb06b4-c047-48cf-9b2e-e1abd6de528d">
 
 ## TP3 - Interface REST
+
+
+
+## TP4 Bus CAN
+
+L'objectif de ce tp Développement d'une API Rest et mise en place d'un périphérique sur bus CAN
+
+![image](https://github.com/user-attachments/assets/9905232c-8348-4857-b2c9-54bdc756f4a8)
+
+Les cartes STM32L476 sont équipées d'un contrôleur CAN intégré. Pour pouvoir les utiliser, il faut leur adjoindre un Tranceiver CAN. Ce rôle est dévolu à un TJA1050. Ce composant est alimenté en 5V, mais possède des E/S compatibles 3,3V.
+
+Afin de faciliter sa mise en œuvre, ce composant a été installé sur une carte fille (shield) au format Arduino, qui peut donc s'insérer sur les cartes nucléo64:
+
+![image](https://github.com/user-attachments/assets/c4954c0c-7073-4c1c-a7b3-50dbe391ba07)
+
+Ce shield possède un connecteur subd9, qui permet de connecter un câble au format CAN. Pour rappel, le brochage de ce connecteur est le suivant:
+
+![image](https://github.com/user-attachments/assets/9e181161-c346-4580-a5ca-4e5ff186d56d)
+
+Nous allons utiliser le bus CAN pour piloter un module moteur pas-à-pas. Ce module s'alimente en +12V.
+pour piloté se moteur on a le Mode de calcul automatique de l'angle : il vous suffit d'envoyer une trame CAN configurée avec l'angle du moteur, puis le moteur tournera jusqu'à atteindre le nouvel angle.
+
+Composition de la trame :
+
+* Donnée D0 : Angle souhaité, entre 0° et 180° (si >180°, l'angle sera limité à 180°)
+* Donnée D1 : Représente le signe de l'angle
+
