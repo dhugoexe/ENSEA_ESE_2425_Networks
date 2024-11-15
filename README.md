@@ -1,4 +1,4 @@
-![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/751a0402-e8fa-44b7-b8dc-92e1f48bff26)## 1. Présentation
+## 1. Présentation
 Le but de cette série de TP est de mettre en place l'ensemble des composants suivant: </br>
 
 <img width="1104" alt="Screenshot 2024-10-10 at 08 27 51" src="https://github.com/user-attachments/assets/ae6aea65-0050-4f10-aea6-8499c9085bf0"># ENSEA_ESE_2425_Networks
