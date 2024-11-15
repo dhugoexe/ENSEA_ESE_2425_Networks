@@ -1,4 +1,4 @@
-## 1. Présentation
+![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/751a0402-e8fa-44b7-b8dc-92e1f48bff26)## 1. Présentation
 Le but de cette série de TP est de mettre en place l'ensemble des composants suivant: </br>
 
 <img width="1104" alt="Screenshot 2024-10-10 at 08 27 51" src="https://github.com/user-attachments/assets/ae6aea65-0050-4f10-aea6-8499c9085bf0"># ENSEA_ESE_2425_Networks
@@ -216,14 +216,19 @@ Pour tester la communication sur le port série de votre Raspberry Pi, nous allo
 
 ![image](https://github.com/user-attachments/assets/107fcfbc-4cf6-42c7-bcd4-4db3fb35de5c)
 
-Pour vérifier le bon fonctionnement du port série, nous avons d'abord réalisé un test en loopback :
-TX (GPIO14) connecté à RX (GPIO15)
+nous allons utulisé la commande ls /dev/tty* pour affiche tous les périphériques de type terminal (consoles, ports série, etc.) qui sont accessibles sur votre système.
 
 ![Capture d'écran 2024-11-12 190059](https://github.com/user-attachments/assets/d4de8b78-dbfa-4f81-8358-7dc915261580)
 
-Résultat : Les caractères tapés s'affichaient à l'écran, confirmant le bon fonctionnement du port série.
+Une fois dans minicom configurer le port série en pressant CTRL+A suivi de O.
 
+![Capture d'écran 2024-11-12 181532](https://github.com/user-attachments/assets/270eff34-5d9f-4a3e-8548-150095baa6f4)
 
+en suite ona rentrée sur Serial Port Setup pour déactiver le contrôle de flux matériel (on utilise pas les lignes RTS/CTS).
+
+![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/00fe2560-c339-4d05-9220-f8ae911e7035)
+
+pour ecrire sur le minicom nous allons cliquer sur CNTRL+A E, Résultat Les caractères tapés s'affichaient à l'écran, confirmant le bon fonctionnement du port série.
 
 ![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
 
