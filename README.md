@@ -130,6 +130,11 @@ La sélection du registre à lire se fait en envoyant (transmit) auparavant l'ad
 
 ## *Identification du BMP280
 
+En I²C, la lecture se déroule de la manière suivante:
+
+1-envoyer l'adresse du registre ID
+2-recevoir 1 octet correspondant au contenu du registre
+
 ![image](https://github.com/user-attachments/assets/7d2fcb21-14ee-435a-b68b-c3738b40383a)
 
 Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58, correspondant à la même valeur que celle obtenue dans Tera Term.
@@ -141,31 +146,19 @@ Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58
 
 Pour commencer, nous allons utiliser la configuration suivante: mode normal, Pressure oversampling x16, Temperature oversampling x2
 
+En I²C, l'écriture dans un registre se déroule de la manière suivante:
+
+1-envoyer l'adresse du registre à écrire, suivi de la valeur du registre
+2-si on reçoit immédiatement, la valeur reçu sera la nouvelle valeur du registre
+
 ![Capture d'écran 2024-11-10 123838](https://github.com/user-attachments/assets/42a5cd92-1fc5-4ca3-8cc8-7079497a4f7e)
 
 
 
+## Récupération de l'étalonnage, de la température et de la pression
 
 
-```
- printf("\r\nTest\r\n");
-```
 
-  ![image](https://github.com/user-attachments/assets/634696e5-3728-4918-9c58-26e95e8df641)
-
-
-  ```
-  status = HAL_I2C_Master_Transmit(&hi2c2, BSP280_ADDR, idRegister, sizeof(idRegister), -1);
-	do{
-		printf("status: %i \r\n", status);
-		status = HAL_I2C_Master_Receive(&hi2c2, BSP280_ADDR, dataBuffer, sizeof(dataBuffer), -1);
-		HAL_Delay(100);
-
-	}while(status != HAL_OK);
-
-	printf("Res: %i \r\n", dataBuffer[0]);
-  ```
-![image](https://github.com/user-attachments/assets/103ec964-def7-4f67-8a41-f51a49c39b00)
 
 
 ## TP2
