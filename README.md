@@ -327,6 +327,8 @@ Dans cette étape, nous avons activé le CAN1 et l'avons configuré en fonction 
  pour que  le moteur tourne de 90° dans un sens, puis de 90° dans l'autre, avec une période de 1 seconde.nous allons utulisé les primitives HAL de CAN:
 
 * HAL_StatusTypeDef HAL_CAN_Start (CAN_HandleTypeDef * hcan):La fonction HAL_CAN_Start de la bibliothèque HAL pour STM32 permet de démarrer le périphérique CAN. Elle permet d'initialise et d'active la communication CAN pour permettre l'envoi et la réception de messages.
+  
+![image](https://github.com/user-attachments/assets/2415450c-caa1-4ca6-8506-ed4b1ba75e7b)
 
 *aprés on a utulisé La variable TxHeader est une structure contenant les champs suivants, que vous devez remplir avant de faire appel à HAL_CAN_AddTxMessage:
 
