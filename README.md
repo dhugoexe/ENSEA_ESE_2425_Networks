@@ -174,10 +174,13 @@ pour la calcule des températeur et des pressn compensées on a utulisé la data
 
 ![image](https://github.com/user-attachments/assets/0d31e23f-4fc2-4e91-b62f-3794b6df1d5f)
 
+## Interfaçage de l'accléromètre
 
+![image](https://github.com/user-attachments/assets/9a0f80ea-2985-48af-b3cd-68db98a38505)
 
+## Conclusion
 
-
+À partir de ce TP, nous avons configuré les capteurs BMP280 et MPU9250 pour afficher la température ainsi que la pression, en versions compensée et non compensée.
 
 ## TP2
 
