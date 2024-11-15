@@ -134,7 +134,15 @@ La sélection du registre à lire se fait en envoyant (transmit) auparavant l'ad
 
 Comme l'indique le tableau de la mémoire MAP, l'adresse du registre ID est 0x58, correspondant à la même valeur que celle obtenue dans Tera Term.
 
-![image](https://github.com/user-attachments/assets/01a4f2e6-1cae-4f24-a7f4-bb6125334aea)
+![image](https://github.com/user-attachments/assets/6d9db1a0-615f-4edc-8ee1-434ac4d2bce0)
+
+
+## Configuration du BMP280
+
+Pour commencer, nous allons utiliser la configuration suivante: mode normal, Pressure oversampling x16, Temperature oversampling x2
+
+![Capture d'écran 2024-11-10 123838](https://github.com/user-attachments/assets/42a5cd92-1fc5-4ca3-8cc8-7079497a4f7e)
+
 
 
 
