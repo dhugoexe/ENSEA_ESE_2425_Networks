@@ -206,6 +206,16 @@ Ensuite, on se connecte en SSH :
 
 <img width="842" alt="Screenshot 2024-10-18 at 09 16 22" src="https://github.com/user-attachments/assets/2594276c-15a5-4f70-a4be-41b8cf8f4cb5">
 
+
+## Port Série
+Nous allons boucler le port série du Raspberry Pi en connectant la pin RX (GPIO15) à la pin TX (GPIO14).
+
+![image](https://github.com/user-attachments/assets/45bc34ab-8509-4189-92c6-9a34baec4366)
+
+Pour tester la communication sur le port série de votre Raspberry Pi, nous allons utiliser un logiciel appelé minicom. Il vous permettra d'envoyer et de recevoir des données via le port série.
+
+![image](https://github.com/user-attachments/assets/107fcfbc-4cf6-42c7-bcd4-4db3fb35de5c)
+
 Pour vérifier le bon fonctionnement du port série, nous avons d'abord réalisé un test en loopback :
 TX (GPIO14) connecté à RX (GPIO15)
 
@@ -216,15 +226,6 @@ Résultat : Les caractères tapés s'affichaient à l'écran, confirmant le bon 
 
 
 ![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
-
-## Port Série
-Nous allons boucler le port série du Raspberry Pi en connectant la pin RX (GPIO15) à la pin TX (GPIO14).
-
-![image](https://github.com/user-attachments/assets/45bc34ab-8509-4189-92c6-9a34baec4366)
-
-Pour tester la communication sur le port série de votre Raspberry Pi, nous allons utiliser un logiciel appelé minicom. Il vous permettra d'envoyer et de recevoir des données via le port série.
-
-
 
 
 ### 3.3 Communication avec le STM32
