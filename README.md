@@ -133,6 +133,7 @@ La sélection du registre à lire se fait en envoyant (transmit) auparavant l'ad
 En I²C, la lecture se déroule de la manière suivante:
 
 1-envoyer l'adresse du registre ID
+
 2-recevoir 1 octet correspondant au contenu du registre
 
 ![image](https://github.com/user-attachments/assets/7d2fcb21-14ee-435a-b68b-c3738b40383a)
@@ -149,13 +150,18 @@ Pour commencer, nous allons utiliser la configuration suivante: mode normal, Pre
 En I²C, l'écriture dans un registre se déroule de la manière suivante:
 
 1-envoyer l'adresse du registre à écrire, suivi de la valeur du registre
+
 2-si on reçoit immédiatement, la valeur reçu sera la nouvelle valeur du registre
 
 ![Capture d'écran 2024-11-10 123838](https://github.com/user-attachments/assets/42a5cd92-1fc5-4ca3-8cc8-7079497a4f7e)
 
 
-
 ## Récupération de l'étalonnage, de la température et de la pression
+
+Les paramètres de calibrage sont programmés dans la mémoire non volatile (NVM) des dispositifs lors de leur fabrication et ne peuvent pas être modifiés par l'utilisateur. Chaque valeur de compensation est un entier de 16 bits, stocké en complément à deux, et nécessite deux mots de 8 bits pour être représenté. Les registres de 8 bits, nommés calib00 à calib25, sont situés aux adresses mémoire de 0x88 à 0xA1. Les valeurs de compensation pour la température sont nommées dig_T# et celles pour la pression, dig_P#,comme le montre le tableau suivant:
+
+![image](https://github.com/user-attachments/assets/d7ff87c1-2723-4d3d-a4ac-e59513f85355)
+
 
 
 
