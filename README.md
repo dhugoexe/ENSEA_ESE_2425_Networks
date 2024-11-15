@@ -206,17 +206,54 @@ Ensuite, on se connecte en SSH :
 
 <img width="842" alt="Screenshot 2024-10-18 at 09 16 22" src="https://github.com/user-attachments/assets/2594276c-15a5-4f70-a4be-41b8cf8f4cb5">
 
-![Capture d'écran 2024-11-12 181032](https://github.com/user-attachments/assets/7fe05d56-f98b-4827-ba57-e6b1ae369b58)
+Pour vérifier le bon fonctionnement du port série, nous avons d'abord réalisé un test en loopback :
+TX (GPIO14) connecté à RX (GPIO15)
 
-![Capture d'écran 2024-11-12 181532](https://github.com/user-attachments/assets/8657c7b7-f6c7-4c5b-bb61-f24a48c74135)
 
-![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/06bc0f44-fcbe-4310-811c-02cdfe0648b6)
-
-![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
+Résultat : Les caractères tapés s'affichaient à l'écran, confirmant le bon fonctionnement du port série.
 
 ![Capture d'écran 2024-11-12 190059](https://github.com/user-attachments/assets/d4de8b78-dbfa-4f81-8358-7dc915261580)
 
 
+![Capture d'écran 2024-11-12 182010](https://github.com/user-attachments/assets/9dbf1e90-e71b-41da-8ffb-30e3ade2b429)
 
 
+### 3.3 Communication avec le STM32
 
+
+On implémente le protocole suviant de communication entre le Raspberry et la STM32:
+
+<img width="571" alt="Screenshot 2024-11-15 at 11 24 19" src="https://github.com/user-attachments/assets/c2e72882-f284-4d6e-9af0-fa283d20f40b">
+
+### 3.4. Commande depuis Python
+
+Pour établir la communication avec le port série, nous avons utilisé la bibliothèque pyserial. Cette solution permet d'interfacer efficacement le protocole de communication série avec Python, facilitant ainsi son intégration ultérieure dans une API REST. L'implémentation est disponible dans le fichier API/serial.py.
+
+Environnement de développement
+Choix d'une approche efficace
+Pour optimiser le développement sur Raspberry Pi, nous avons délibérément évité l'utilisation d'éditeurs en ligne de commande comme VIM ou NANO, qui peuvent ralentir le processus de développement. À la place, nous avons opté pour une solution plus moderne et ergonomique.
+Configuration du développement à distance
+Nous avons mis en place un système de développement à distance utilisant PyCharm. Cependant, plutôt que d'utiliser la fonctionnalité de développement à distance native de PyCharm qui aurait nécessité :
+
+L'installation d'un serveur PyCharm sur le Raspberry Pi
+Une configuration complexe
+Des ressources système supplémentaires
+Une surface d'attaque de sécurité accrue
+
+Nous avons privilégié une approche plus légère basée sur SFTP.
+Solution SFTP retenue
+Cette approche présente plusieurs avantages :
+
+Synchronisation automatique des fichiers de code uniquement
+Absence de fichiers de configuration IDE sur le Raspberry Pi
+Maintenance simplifiée
+Meilleure sécurité
+Consommation minimale des ressources du Raspberry Pi
+
+La configuration SFTP permet un déploiement ciblé et efficace, ne transférant que les fichiers nécessaires à l'exécution du code.
+Ci-dessous, la configuration SFTP:
+
+<img width="563" alt="Screenshot 2024-11-15 at 11 32 55" src="https://github.com/user-attachments/assets/2101b1d2-86c5-4715-9d88-71b28de23629">
+<img width="602" alt="Screenshot 2024-11-15 at 11 33 17" src="https://github.com/user-attachments/assets/56eb06b4-c047-48cf-9b2e-e1abd6de528d">
+
+## TP3 - Interface REST
