@@ -317,6 +317,12 @@ Dans cette étape, nous avons activé le CAN1 et l'avons configuré en fonction 
 
 ![image](https://github.com/user-attachments/assets/69ee88a2-35eb-456d-b069-a18ed8b01d17)
 
+Maitenant nous allons mettre un simple code pour commandé le moteur pour tourne 90 ° dans les deux sens 
+
+
+![image](https://github.com/user-attachments/assets/4de9d2c3-1e82-4a14-81d1-fb89ef911127)
+
+
 
 
  
