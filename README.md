@@ -327,10 +327,24 @@ Ensuite, conformément au proptocole web (HTTP), on indique le type de retour:
 ![image](https://github.com/user-attachments/assets/8444fca0-bc42-4912-a97a-fcdbeb6ab412)
 ![image](https://github.com/user-attachments/assets/68cf3182-87c7-4f6e-8ee9-bfd45670d524)
 
+### API CRUD 
+
+On ajoute les méthodes HTTP suivantes:
+<img width="525" alt="Screenshot 2024-11-15 at 15 08 29" src="https://github.com/user-attachments/assets/43d60f2e-803e-422f-b095-8a63ae820b55">
+
+Ci-dessous, des exemples d'utilisations:
+
+#### GET
+<img width="1155" alt="Screenshot 2024-11-15 at 15 06 29" src="https://github.com/user-attachments/assets/1fc4abdd-f4ff-42fb-adfe-472143ee74ac">
+
+#### POST 
+<img width="1155" alt="Screenshot 2024-11-15 at 15 06 53" src="https://github.com/user-attachments/assets/cacdc7c9-040c-4afe-82bf-e5f69eef13d6">
+
+#### DELETE
+<img width="1155" alt="Screenshot 2024-11-15 at 15 07 10" src="https://github.com/user-attachments/assets/07d6a2e0-e898-4e99-942b-0e5932ca2cc1">
 
 
-
-
+Remarque: tout le codes des autres méthodes se trouve dans le fichier `api/hello.py`. Nous avons utiliser HTTPie comme client HTTP pour effectué les tests.
 ## TP4 Bus CAN
 
 L'objectif de ce tp Développement d'une API Rest et mise en place d'un périphérique sur bus CAN
