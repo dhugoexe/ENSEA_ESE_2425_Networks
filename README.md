@@ -276,6 +276,21 @@ Ci-dessous, la configuration SFTP:
 L'objectif de ce TP est de développer une interface REST sur le Raspberry Pi, permettant d'assurer une communication efficace et standardisée avec d'autres systèmes ou dispositifs via des requêtes HTTP.
 ## 4.1 Installation du serveur Python
 ## Installation
+Créez votre propre utilisateur différent de pi, remplacer XXX par le nom de votre choix, avec les droits de sudo et  d'accès au port série (dialout):
+
+sudo adduser XXX
+sudo usermod -aG sudo XXX
+sudo usermod -aG dialout XXX
+
+*sudo usermod -aG sudo XXX
+
+Cette commande ajoute l'utilisateur XXX au groupe sudo, ce qui lui accorde les droits administratifs.
+L'option -aG signifie : ajouter (a) au groupe (G) sans modifier l'appartenance actuelle de l'utilisateur à d'autres groupes.
+
+*sudo usermod -aG dialout XXX
+
+Cette commande ajoute l'utilisateur XXX au groupe dialout. Ce groupe donne l'autorisation d'accéder aux ports série (par exemple, /dev/ttyS0 ou /dev/ttyUSB0), ce qui est nécessaire pour utiliser des périphériques connectés au port série.
+
 
 On commence par faire une route API, simple retournant simplement un message de bienvenue: 
 ![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
