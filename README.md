@@ -415,6 +415,8 @@ Dans cette partie on a calcule la vitesse et l'angle a partir de la valeur de te
 
 ![image](https://github.com/user-attachments/assets/b3ff8186-35a8-46e0-9a30-9ae5e426e84b)
 
+Le programme ajuste la vitesse et le sens de rotation d’un moteur en fonction de la température mesurée. La valeur de température est convertie en vitesse, envoyée via le bus CAN, et un message de confirmation est affiché sur un terminal série. Ce type de contrôle est courant dans les systèmes embarqués nécessitant un ajustement dynamique basé sur des capteurs environnementaux.
+
 
 
 
