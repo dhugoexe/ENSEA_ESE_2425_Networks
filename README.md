@@ -282,14 +282,21 @@ sudo adduser XXX
 sudo usermod -aG sudo XXX
 sudo usermod -aG dialout XXX
 
-*sudo usermod -aG sudo XXX
-
-Cette commande ajoute l'utilisateur XXX au groupe sudo, ce qui lui accorde les droits administratifs.
+*sudo usermod -aG sudo XXX:Cette commande ajoute l'utilisateur XXX au groupe sudo, ce qui lui accorde les droits administratifs.
 L'option -aG signifie : ajouter (a) au groupe (G) sans modifier l'appartenance actuelle de l'utilisateur à d'autres groupes.
 
-*sudo usermod -aG dialout XXX
+*sudo usermod -aG dialout XXX:Cette commande ajoute l'utilisateur XXX au groupe dialout. Ce groupe donne l'autorisation d'accéder aux ports série (par exemple, /dev/ttyS0 ou /dev/ttyUSB0), ce qui est nécessaire pour utiliser des périphériques connectés au port série.
 
-Cette commande ajoute l'utilisateur XXX au groupe dialout. Ce groupe donne l'autorisation d'accéder aux ports série (par exemple, /dev/ttyS0 ou /dev/ttyUSB0), ce qui est nécessaire pour utiliser des périphériques connectés au port série.
+installation de pip pour python3 sur le Raspberry:
+*sudo apt update
+-Cette commande met à jour la liste des paquets disponibles sur le Raspberry Pi.
+-Cela garantit que les versions des logiciels installés ou disponibles sont les plus récentes.
+
+*sudo apt install python3-pip
+-Cette commande installe pip pour Python 3.
+-pip est un outil essentiel pour gérer les bibliothèques Python et installer des dépendances nécessaires pour vos projets (comme Flask, NumPy, etc.).
+-L'installation se fait avec sudo car elle modifie les paquets système, ce qui nécessite des droits administratifs.
+
 
 
 On commence par faire une route API, simple retournant simplement un message de bienvenue: 
