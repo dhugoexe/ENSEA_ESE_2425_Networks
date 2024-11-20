@@ -274,7 +274,8 @@ Ci-dessous, la configuration SFTP:
 
 ## TP3 - Interface REST
 L'objectif de ce TP est de développer une interface REST sur le Raspberry Pi, permettant d'assurer une communication efficace et standardisée avec d'autres systèmes ou dispositifs via des requêtes HTTP.
-## TP3
+## 4.1 Installation du serveur Python
+## Installation
 
 On commence par faire une route API, simple retournant simplement un message de bienvenue: 
 ![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
