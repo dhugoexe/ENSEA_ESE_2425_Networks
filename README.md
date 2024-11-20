@@ -276,7 +276,7 @@ Ci-dessous, la configuration SFTP:
 L'objectif de ce TP est de développer une interface REST sur le Raspberry Pi, permettant d'assurer une communication efficace et standardisée avec d'autres systèmes ou dispositifs via des requêtes HTTP.
 ## 4.1 Installation du serveur Python
 ## Installation
-Créez votre propre utilisateur différent de pi, remplacer XXX par le nom de votre choix, avec les droits de sudo et  d'accès au port série (dialout):
+1-Créez votre propre utilisateur différent de pi, remplacer XXX par le nom de votre choix, avec les droits de sudo et  d'accès au port série (dialout):
 
 sudo adduser XXX
 sudo usermod -aG sudo XXX
@@ -287,7 +287,7 @@ L'option -aG signifie : ajouter (a) au groupe (G) sans modifier l'appartenance a
 
 *sudo usermod -aG dialout XXX:Cette commande ajoute l'utilisateur XXX au groupe dialout. Ce groupe donne l'autorisation d'accéder aux ports série (par exemple, /dev/ttyS0 ou /dev/ttyUSB0), ce qui est nécessaire pour utiliser des périphériques connectés au port série.
 
-installation de pip pour python3 sur le Raspberry:
+2-installation de pip pour python3 sur le Raspberry:
 *sudo apt update
 -Cette commande met à jour la liste des paquets disponibles sur le Raspberry Pi.
 -Cela garantit que les versions des logiciels installés ou disponibles sont les plus récentes.
@@ -297,6 +297,11 @@ installation de pip pour python3 sur le Raspberry:
 -pip est un outil essentiel pour gérer les bibliothèques Python et installer des dépendances nécessaires pour vos projets (comme Flask, NumPy, etc.).
 -L'installation se fait avec sudo car elle modifie les paquets système, ce qui nécessite des droits administratifs.
 
+3-Créez un répertoire pour le développement de votre serveur
+
+-Le fichier requirements.txt est un fichier texte qui liste toutes les dépendances Python. Nous allons créer ce fichier manuellement en utilisant un éditeur de texte : nano requirements.txt
+-Ensuite, ajoutez les lignes suivantes dans le fichier :pyserial,flask
+-Installation les bibliothèques à partir de requirements.txt:pip3 install -r requirements.txt
 
 
 On commence par faire une route API, simple retournant simplement un message de bienvenue: 
