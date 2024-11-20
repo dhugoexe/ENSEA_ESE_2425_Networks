@@ -226,7 +226,8 @@ Une fois dans minicom configurer le port série en pressant CTRL+A suivi de O.
 
 en suite ona rentrée sur Serial Port Setup pour déactiver le contrôle de flux matériel (on utilise pas les lignes RTS/CTS).
 
-![Capture d'écran 2024-11-12 181805](https://github.com/user-attachments/assets/00fe2560-c339-4d05-9220-f8ae911e7035)
+![Capture d'écran 2024-11-15 163328](https://github.com/user-attachments/assets/3ffb7ec3-6701-4dcc-b29c-b3c53c0d57a0)
+
 
 pour ecrire sur le minicom nous allons cliquer sur CNTRL+A E, Résultat Les caractères tapés s'affichaient à l'écran, confirmant le bon fonctionnement du port série.
 
