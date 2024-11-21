@@ -499,6 +499,8 @@ GET_TT=+12.50_C
 ```
 
 On implémente maintenant le code de la température et de la pression dans l'api:
+![Capture d'écran 2024-11-21 172719](https://github.com/user-attachments/assets/a8a6a0cd-65c8-4ba5-954a-bd64f5afe8e5)
+
 ### Température:
 <img width="1155" alt="Screenshot 2024-11-21 at 17 55 21" src="https://github.com/user-attachments/assets/1f0d491a-2eb6-4490-8693-c5154812be63">
 
