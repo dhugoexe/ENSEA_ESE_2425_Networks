@@ -332,6 +332,20 @@ Nous allons ajouter les lignes suivantes au fichier hello.py :
 
 ![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
 
+-Rôle du décorateur @app.route :
+Le décorateur @app.route est utilisé dans Flask pour associer une URL spécifique à une fonction Python. Lorsqu'un utilisateur accède à l'URL spécifiée dans un navigateur, la fonction correspondante est exécutée pour générer une réponse. Par exemple, @app.route('/') indique que la fonction associée doit être exécutée lorsqu'un utilisateur visite la racine de l'application (/).
+
+-Rôle du fragment <int:index> :
+Le fragment <int:index> dans une route Flask sert à capturer une partie dynamique de l'URL comme un paramètre. Ici, int spécifie que la valeur capturée doit être un entier. Par exemple, si une route est définie comme @app.route('/item/<int:index>') et qu'un utilisateur accède à /item/5, la valeur 5 sera extraite et passée comme argument à la fonction associée. Cela permet de gérer des URLs dynamiques.
+
+## Réponse JSON
+Nous allos remplacer la dernière ligne de la fonction api_welcome_index par:
+
+![Capture d'écran 2024-10-25 113033](https://github.com/user-attachments/assets/58922bc8-41d8-4715-8e3f-c842ac832041)
+
+![Capture d'écran 2024-10-25 112839](https://github.com/user-attachments/assets/69dfdd06-952e-4759-a2c8-fe21b6321c73)
+
+
 ### 1.1 Exemple de route
 
 ```
