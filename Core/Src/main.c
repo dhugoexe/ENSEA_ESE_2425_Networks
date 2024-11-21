@@ -73,11 +73,15 @@ HAL_StatusTypeDef status;
 int32_t coefficientK=1 ;
 uint32_t TxMailbox;
 uint16_t rxIndex = 0;
-char rx_buffer[BUFFER_SIZE];
-volatile uint8_t rx_index = 0;
+//char rx_buffer[BUFFER_SIZE];
+//volatile uint8_t rx_index = 0;
+extern UART_HandleTypeDef huart1;
 char command_buffer[BUFFER_SIZE];
 char response_buffer[64]; // Pour stocker la réponse à envoyer
 
+#define RX_BUFFER_SIZE 20
+volatile char rx_buffer[RX_BUFFER_SIZE]; // Buffer de réception
+volatile uint8_t rx_index = 0;           // Index pour remplir le buffer
 //uint8_t BMP280_TRIM_REG_MSB = 0x88;
 //uint8_t BMP280_TEMP_REG_MSB = 0xFA;
 //uint8_t BMP280_PRES_REG_MSB = 0xF7;
@@ -250,8 +254,7 @@ int main(void)
 	printf("\r\n Affichage de MPU \r\n");
 	MPU9250_Data(&x, &y, &z);  // ou MPU9250_Read_Raw_Data pour le MPU9250
 	Data_Accel(x, y, z);
-	//printf("Test\r\n");
-	//HAL_UART_Receive_IT(&huart3, &Data, 1);
+
 
 	// Démarrer le module CAN
 
@@ -262,7 +265,7 @@ int main(void)
 		Error_Handler();
 	}
 
-	// printf("activation de CAN\r\n");
+	 printf("activation de CAN\r\n");
 
 	//Manuel Mode
 
@@ -282,7 +285,7 @@ int main(void)
    TxHeader.RTR = CAN_RTR_DATA;     // Trame de données
    TxHeader.DLC = 2;                // Taille des données (1 octet dans ce cas)
    TxHeader.TransmitGlobalTime = DISABLE;
-	 */
+	 /*
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -303,7 +306,7 @@ int main(void)
 
 		 */
 		// calcule d'angle
-		angle = (Tempinit-BMP280_Temperateur())*coefficientK ;
+		  angle = (Tempinit-BMP280_Temperateur())*coefficientK ;
 		// TxData[1]=1;
 
 		//calcule vitesse
@@ -333,6 +336,10 @@ int main(void)
 		HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
 		HAL_Delay(1000);
 		printf("rotation moteur sens1\r\n");
+
+		 printf("==============Raspberry ===============\r\n");
+		 HAL_UART_Receive_IT(&huart1, (uint8_t*)&rx_buffer[rx_index], 1);
+
 
 		/*
 	 else{
@@ -399,49 +406,50 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart->Instance == USART1) {
-		char received_char = rx_buffer[rx_index];
+    if (huart->Instance == USART1) { // Vérifier si l'interruption est pour USART2
+        if (rx_buffer[rx_index] == '\r') { // Commande terminée (fin de ligne)
+            //rx_buffer[rx_index] = '\0'; // Ajouter un caractère de fin de chaîne
+            handle_command((char*)rx_buffer); // Appeler la fonction pour traiter la commande
+            rx_index = 0; // Réinitialiser l'index pour la prochaine commande
+        } else {
+            // Incrémenter l'index et assurer qu'il reste dans les limites du buffer
+        	HAL_UART_Transmit(&huart1, (uint8_t*)&rx_buffer[rx_index], 1,HAL_MAX_DELAY);
+            rx_index = rx_index + 1;
 
-		// Ajouter le caractère au buffer de commande
-		if (received_char == '\r' || received_char == '\n') {
-			command_buffer[rx_index] = '\0';  // Terminer la commande
-			process_command(command_buffer);  // Traiter la commande reçue
-			rx_index = 0;                     // Réinitialiser l'index
-		} else {
-			command_buffer[rx_index++] = received_char;
+        }
 
-			// Empêcher le dépassement du buffer
-			if (rx_index >= BUFFER_SIZE) {
-				rx_index = 0;
-			}
-		}
+        // Relancer la réception pour le prochain caractère
+        HAL_UART_Receive_IT(&huart1, (uint8_t*)&rx_buffer[rx_index], 1);
 
-		// Relancer la réception d'un autre caractère
-		HAL_UART_Receive_IT(&huart1, (uint8_t*)&rx_buffer[rx_index], 1);
-	}
-}
-
-void process_command(char *command) {
-	if (strncmp(command, "GET_T", 5) == 0) {
-		sprintf(response_buffer, "T=10_C\r\n"); // Exemple de température
-	}
-	/*
-    else if (strncmp(command, "GET_P", 5) == 0) {
-        sprintf(response_buffer, "P=%dPa\r\n", 102300); // Exemple de pression
-    } else if (strncmp(command, "SET_K=", 6) == 0) {
-        int new_k = atoi(&command[6]);
-        sprintf(response_buffer, "SET_K=OK\r\n");
-    } else if (strncmp(command, "GET_K", 5) == 0) {
-        sprintf(response_buffer, "K=%.5f\r\n", 12.34);
-    } else if (strncmp(command, "GET_A", 5) == 0) {
-        sprintf(response_buffer, "A=%.4f\r\n", 125.7);
-    } else {
-        sprintf(response_buffer, "Unknown command\r\n");
     }
-	 */
-	// Envoyer la réponse sur UART3
-	HAL_UART_Transmit(&huart1, (uint8_t*)response_buffer, strlen(response_buffer), -1);
 }
+
+void handle_command(char *command) {
+    char tx_buffer[50];
+
+    if (strncmp(command, "GET_T", 5) == 0) {
+        snprintf(tx_buffer, sizeof(tx_buffer), "T=%ld °C r\\n", BMP280_Temperateur());
+    }
+    else if (strncmp(command, "GET_P", 5) == 0) {
+        snprintf(tx_buffer, sizeof(tx_buffer), "%ld hPa r\\n",BMP280_Pression());
+    }
+    else if (strncmp(command, "SET_K=%i", 6) == 0) {
+        snprintf(tx_buffer, sizeof(tx_buffer), "SET_K=OK\n");
+    }
+    else if (strncmp(command, "GET_K", 5) == 0) {
+        snprintf(tx_buffer, sizeof(tx_buffer), "K=12.3400\n");
+    }
+    else if (strncmp(command, "GET_A", 5) == 0) {
+        snprintf(tx_buffer, sizeof(tx_buffer), "A=125.7000\n");
+    }
+    else {
+        snprintf(tx_buffer, sizeof(tx_buffer), "Erreur: Commande inconnue\n");
+    }
+
+    // Envoyer la réponse via UART
+    HAL_UART_Transmit(&huart1, (uint8_t*)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+}
+
 
 /* USER CODE END 4 */
 

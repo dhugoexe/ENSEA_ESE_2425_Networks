@@ -44,9 +44,9 @@ int32_t BMP280_Temperateur() {
 	compensateTemperateur =bmp280_compensate_T_int32(NONcompensateTemperateur);
 	free(buffer);
 
-	printf("TemperatureNonCompens: %ld \r\n" , NONcompensateTemperateur);
-	printf("TemperatureCompens: %ld\r\n", compensateTemperateur);
-	return NONcompensateTemperateur;
+	    printf("TemperatureNonCompens: %ld \r\n" , NONcompensateTemperateur);
+		printf("TemperatureCompens: %ld °C\r\n", compensateTemperateur);
+		return compensateTemperateur;
 }
 
 int BMP280_Pression() {
@@ -69,8 +69,9 @@ int BMP280_Pression() {
 	compensatePression=bmp280_compensate_P_int32(NONcompensatePression);
 	free(buffer);
 
-	printf("PressionNonCompens: %ld \r\n" , NONcompensatePression);
-	printf("PressionCompens: %ld\r\n", compensatePression);
+	        printf("PressionNonCompens: %ld \r\n" , NONcompensatePression);
+			printf("PressionCompens: %ld hPa \r\n", compensatePression);
+			return compensatePression;
 
 
 	return 0;
@@ -119,7 +120,7 @@ uint32_t bmp280_compensate_P_int32(int32_t adc_P)
 	var1 = (((int32_t)dig_P9) * ((int32_t)(((p>>3) * (p>>3))>>13)))>>12;
 	var2 = (((int32_t)(p>>2)) * ((int32_t)dig_P8))>>13;
 	p = (uint32_t)((int32_t)p + ((var1 + var2 + dig_P7) >> 4));
-	return p;
+	return p/100;
 }
 
 
@@ -183,4 +184,3 @@ void  BMP280_get_trimming(uint8_t data_Calib[size_Calib])
         }
     }
 }
-

@@ -1,8 +1,8 @@
-../Core/Src/main.c:114:6:MPU9250_Init	1
-../Core/Src/main.c:127:6:MPU9250_Data	1
-../Core/Src/main.c:146:6:Data_Accel	1
-../Core/Src/main.c:160:5:main	8
-../Core/Src/main.c:356:6:SystemClock_Config	3
-../Core/Src/main.c:401:6:HAL_UART_RxCpltCallback	5
-../Core/Src/main.c:424:6:process_command	2
-../Core/Src/main.c:452:6:Error_Handler	1
+../Core/Src/main.c:118:6:MPU9250_Init	1
+../Core/Src/main.c:131:6:MPU9250_Data	1
+../Core/Src/main.c:150:6:Data_Accel	1
+../Core/Src/main.c:164:5:main	8
+../Core/Src/main.c:363:6:SystemClock_Config	3
+../Core/Src/main.c:408:6:HAL_UART_RxCpltCallback	3
+../Core/Src/main.c:427:6:handle_command	6
+../Core/Src/main.c:460:6:Error_Handler	1
