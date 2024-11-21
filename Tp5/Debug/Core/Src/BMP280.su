@@ -1,0 +1,5 @@
+../Core/Src/BMP280.c:31:9:BMP280_Temperateur	24	static
+../Core/Src/BMP280.c:52:5:BMP280_Pression	24	static
+../Core/Src/BMP280.c:85:9:bmp280_compensate_T_int32	32	static
+../Core/Src/BMP280.c:97:10:bmp280_compensate_P_int32	32	static
+../Core/Src/BMP280.c:127:7:BMP280_get_trimming	96	static
