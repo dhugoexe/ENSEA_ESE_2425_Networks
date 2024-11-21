@@ -346,7 +346,12 @@ Nous allos remplacer la dernière ligne de la fonction api_welcome_index par:
 ![Capture d'écran 2024-10-25 112839](https://github.com/user-attachments/assets/69dfdd06-952e-4759-a2c8-fe21b6321c73)
 
 
-### 1.1 Exemple de route
+### Méthodes POST, PUT, DELETE…
+
+Avec Flask (et FastAPI), on utilise pour chaque fonction un décodeur `@app.route`, pour indiquer qu'en cas de requête HTTP à l'url indiqué dans le décodeur, il faut executer cette fonction.
+Pa exemple `@app.route('/api/welcome/', methods=['GET', 'POST', 'DELETE'])`, indique que l'on autorise les méthodes GET, POST et DELETE, pour l'url baseUrl/api/welcome.
+Le décodeur est associé à la fonction, `welcome()`, qui sera executé à l'url.
+e role du fragment <int:index> dans l'url indique que cette partie de l'url correspond à une variable, ici on passe un entier. Utilisé pour faire des GET pour obtenir une donnée précise, ne nécéssitant pas de POST. 
 
 ```
 @app.route('/api/welcome/', methods=['GET', 'POST', 'DELETE'])
@@ -371,16 +376,12 @@ def api_welcome():
 ```
 
 
-Avec Flask (et FastAPI), on utilise pour chaque fonction un décodeur `@app.route`, pour indiquer qu'en cas de requête HTTP à l'url indiqué dans le décodeur, il faut executer cette fonction.
-Pa exemple `@app.route('/api/welcome/', methods=['GET', 'POST', 'DELETE'])`, indique que l'on autorise les méthodes GET, POST et DELETE, pour l'url baseUrl/api/welcome.
-Le décodeur est associé à la fonction, `welcome()`, qui sera executé à l'url.
-e role du fragment <int:index> dans l'url indique que cette partie de l'url correspond à une variable, ici on passe un entier. Utilisé pour faire des GET pour obtenir une donnée précise, ne nécéssitant pas de POST. 
-
 Ensuite, conformément au proptocole web (HTTP), on indique le type de retour:
 
 ### API CRUD 
 
 On ajoute les méthodes HTTP suivantes:
+
 <img width="525" alt="Screenshot 2024-11-15 at 15 08 29" src="https://github.com/user-attachments/assets/43d60f2e-803e-422f-b095-8a63ae820b55">
 
 Ci-dessous, des exemples d'utilisations:
