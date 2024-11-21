@@ -244,8 +244,7 @@ Nous allons Implémentez ce protocole dans le STM32 a partir de l'interruption s
 Ce code implémente une fonction de rappel HAL_UART_RxCpltCallback utilisée pour gérer la réception des données via UART en mode interruption. Lorsqu’un caractère est reçu, il est soit ajouté à un buffer (si ce n’est pas la fin d’une commande), soit traité si le caractère indique la fin de la commande (\r). Ensuite, la réception est relancée pour le prochain caractère. Ce mécanisme permet de gérer efficacement les communications série en temps réel.
 ![image](https://github.com/user-attachments/assets/29cc7d7d-353d-4d79-a943-976ece1dc38f)
 
-OnBranchez le STM32 sur le Raspberry en prenant soin de croiser les signaux RX et TX. Les 2 fonctionnent en 3,3V donc aucune adaptation de niveau est nécessaire.
-
+Ensuite, nous avons branché le STM32 au Raspberry Pi en veillant à croiser les signaux RX et TX.
 ![image](https://github.com/user-attachments/assets/d9f73d00-55f9-4e08-a046-753ad282ecb0)
 
 
