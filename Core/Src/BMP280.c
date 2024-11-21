@@ -46,7 +46,7 @@ int32_t BMP280_Temperateur() {
 
 	    printf("TemperatureNonCompens: %ld \r\n" , NONcompensateTemperateur);
 		printf("TemperatureCompens: %ld °C\r\n", compensateTemperateur);
-		return compensateTemperateur;
+		return NONcompensateTemperateur;
 }
 
 int BMP280_Pression() {
