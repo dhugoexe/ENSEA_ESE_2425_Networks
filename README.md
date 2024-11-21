@@ -377,15 +377,7 @@ Le décodeur est associé à la fonction, `welcome()`, qui sera executé à l'ur
 e role du fragment <int:index> dans l'url indique que cette partie de l'url correspond à une variable, ici on passe un entier. Utilisé pour faire des GET pour obtenir une donnée précise, ne nécéssitant pas de POST. 
 
 Ensuite, conformément au proptocole web (HTTP), on indique le type de retour:
-![image](https://github.com/user-attachments/assets/e164d4ae-227b-4d9e-8a26-4b59a2d408bc)
 
-![image](https://github.com/user-attachments/assets/18ea298b-eb2e-448d-a3af-274b879fb00e)
-
-
-
-![image](https://github.com/user-attachments/assets/b7a74638-c4d6-48cd-a77f-b82b6db066fc)
-![image](https://github.com/user-attachments/assets/39673bcc-b56e-4dff-a2a1-07241945a1f3)
-![image](https://github.com/user-attachments/assets/45cdbf3e-986b-4c73-a15b-86b125bb6462)
 
 
 ![image](https://github.com/user-attachments/assets/588a33a7-e7a4-4beb-b79a-538624618db4)
