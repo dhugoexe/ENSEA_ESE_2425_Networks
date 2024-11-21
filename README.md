@@ -245,7 +245,8 @@ Ce code implémente une fonction de rappel HAL_UART_RxCpltCallback utilisée pou
 ![image](https://github.com/user-attachments/assets/29cc7d7d-353d-4d79-a943-976ece1dc38f)
 
 Ensuite, nous avons branché le STM32 au Raspberry Pi en veillant à croiser les signaux RX et TX.
-![image](https://github.com/user-attachments/assets/d9f73d00-55f9-4e08-a046-753ad282ecb0)
+![Uploading Capture d'écran 2024-11-21 170046.png…]()
+
 
 
 ### 3.4. Commande depuis Python
