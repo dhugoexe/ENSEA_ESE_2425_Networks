@@ -325,6 +325,11 @@ Ce code Python utilise le framework Flask pour créer une application web simple
 
 ![Capture d'écran 2024-10-25 110525](https://github.com/user-attachments/assets/9d94f73a-acfd-441b-bd03-c7f527220e98)
 
+## Première route
+Nous allons ajouter les lignes suivantes au fichier hello.py :
+![Capture d'écran 2024-10-25 110450](https://github.com/user-attachments/assets/8989f662-4b63-4460-bd41-ca4eb24c311f)
+
+
 ![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
 
 ### 1.1 Exemple de route
