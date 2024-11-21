@@ -319,6 +319,9 @@ L'option -aG signifie : ajouter (a) au groupe (G) sans modifier l'appartenance a
 
 
 On commence par faire une route API, simple retournant simplement un message de bienvenue: 
+
+![Capture d'écran 2024-10-25 110404](https://github.com/user-attachments/assets/26d35a64-ae50-4d8c-a986-6773c40ed337)
+Ce code Python utilise le framework Flask pour créer une application web simple. Il définit une route principale (/) qui affiche le message "Hello, World!" lorsqu'elle est visitée. Flask est initialisé avec app = Flask(__name__), et la fonction hello_world retourne ce message. 
 ![image](https://github.com/user-attachments/assets/ab1e3d64-7ff6-4e4e-850a-363a423d2575)
 
 ### 1.1 Exemple de route
