@@ -449,6 +449,23 @@ Dans cette partie on a calcule la vitesse et l'angle a partir de la valeur de te
 Le programme ajuste la vitesse et le sens de rotation d’un moteur en fonction de la température mesurée. La valeur de température est convertie en vitesse, envoyée via le bus CAN, et un message de confirmation est affiché sur un terminal série. Ce type de contrôle est courant dans les systèmes embarqués nécessitant un ajustement dynamique basé sur des capteurs environnementaux.
 
 
+## TP5
+
+Dans ce TP, on intègre le tout le protocole:
+
+Ansi, par api, on récupere la température:
+
+test commande get_temperature():
+```
+hugodevaux@raspberrypi-911:~/python-api/api-v2 $ python3 Communication_STM32.py
+Port ouvert
+Commande envoyée
+Données disponibles : 16 bytes
+Données brutes : GET_TT=+12.50_C
+GET_TT=+12.50_C
+```
+
+
 
 
 
