@@ -236,10 +236,14 @@ pour ecrire sur le minicom nous allons cliquer sur CNTRL+A E, Résultat Les cara
 
 ### 3.3 Communication avec le STM32
 
-
 On implémente le protocole suviant de communication entre le Raspberry et la STM32:
 
 <img width="571" alt="Screenshot 2024-11-15 at 11 24 19" src="https://github.com/user-attachments/assets/c2e72882-f284-4d6e-9af0-fa283d20f40b">
+
+## Test avec Minicom
+
+![image](https://github.com/user-attachments/assets/d9f73d00-55f9-4e08-a046-753ad282ecb0)
+
 
 ### 3.4. Commande depuis Python
 
