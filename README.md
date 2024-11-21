@@ -378,14 +378,6 @@ e role du fragment <int:index> dans l'url indique que cette partie de l'url corr
 
 Ensuite, conformément au proptocole web (HTTP), on indique le type de retour:
 
-
-
-![image](https://github.com/user-attachments/assets/588a33a7-e7a4-4beb-b79a-538624618db4)
-
-![image](https://github.com/user-attachments/assets/44034d09-ede3-4fe4-838d-3082284b2ae6)
-![image](https://github.com/user-attachments/assets/8444fca0-bc42-4912-a97a-fcdbeb6ab412)
-![image](https://github.com/user-attachments/assets/68cf3182-87c7-4f6e-8ee9-bfd45670d524)
-
 ### API CRUD 
 
 On ajoute les méthodes HTTP suivantes:
