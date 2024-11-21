@@ -284,6 +284,10 @@ Ci-dessous, la configuration SFTP:
 <img width="563" alt="Screenshot 2024-11-15 at 11 32 55" src="https://github.com/user-attachments/assets/2101b1d2-86c5-4715-9d88-71b28de23629">
 <img width="602" alt="Screenshot 2024-11-15 at 11 33 17" src="https://github.com/user-attachments/assets/56eb06b4-c047-48cf-9b2e-e1abd6de528d">
 
+## Conclusion 
+
+À partir de ce TP, nous allons développer une interface REST sur le Raspberry Pi.
+
 ## TP3 - Interface REST
 L'objectif de ce TP est de développer une interface REST sur le Raspberry Pi, permettant d'assurer une communication efficace et standardisée avec d'autres systèmes ou dispositifs via des requêtes HTTP.
 ## 4.1 Installation du serveur Python
@@ -397,6 +401,11 @@ Ci-dessous, des exemples d'utilisations:
 
 
 Remarque: tout le codes des autres méthodes se trouve dans le fichier `api/hello.py`. Nous avons utiliser HTTPie comme client HTTP pour effectué les tests.
+
+## Conclusion
+
+À partir de ce TP, nous allons développer une API REST et mettre en place un périphérique sur un bus CAN.
+
 ## TP4 Bus CAN
 
 L'objectif de ce tp Développement d'une API Rest et mise en place d'un périphérique sur bus CAN
@@ -467,7 +476,11 @@ Dans cette partie on a calcule la vitesse et l'angle a partir de la valeur de te
 ![image](https://github.com/user-attachments/assets/b3ff8186-35a8-46e0-9a30-9ae5e426e84b)
 
 Le programme ajuste la vitesse et le sens de rotation d’un moteur en fonction de la température mesurée. La valeur de température est convertie en vitesse, envoyée via le bus CAN, et un message de confirmation est affiché sur un terminal série. Ce type de contrôle est courant dans les systèmes embarqués nécessitant un ajustement dynamique basé sur des capteurs environnementaux.
+![Capture d'écran 2024-11-14 210305](https://github.com/user-attachments/assets/fb721db6-d0ac-40ce-b086-e65c0ee0df5c)
 
+## Conclusion 
+
+À partir de ce TP, nous allons développer une API Rest et mettre en place un périphérique sur le bus CAN.
 
 ## TP5
 
