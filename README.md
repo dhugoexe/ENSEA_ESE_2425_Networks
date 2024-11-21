@@ -247,6 +247,8 @@ On implémente le protocole suviant de communication entre le Raspberry et la ST
 
 ### 3.4. Commande depuis Python
 
+
+
 Pour établir la communication avec le port série, nous avons utilisé la bibliothèque pyserial. Cette solution permet d'interfacer efficacement le protocole de communication série avec Python, facilitant ainsi son intégration ultérieure dans une API REST. L'implémentation est disponible dans le fichier API/serial.py.
 
 Environnement de développement
@@ -269,6 +271,7 @@ Absence de fichiers de configuration IDE sur le Raspberry Pi
 Maintenance simplifiée
 Meilleure sécurité
 Consommation minimale des ressources du Raspberry Pi
+
 
 La configuration SFTP permet un déploiement ciblé et efficace, ne transférant que les fichiers nécessaires à l'exécution du code.
 Ci-dessous, la configuration SFTP:
@@ -300,6 +303,8 @@ L'option -aG signifie : ajouter (a) au groupe (G) sans modifier l'appartenance a
 -Cette commande installe pip pour Python 3.
 -pip est un outil essentiel pour gérer les bibliothèques Python et installer des dépendances nécessaires pour vos projets (comme Flask, NumPy, etc.).
 -L'installation se fait avec sudo car elle modifie les paquets système, ce qui nécessite des droits administratifs.
+
+<img width="811" alt="Screenshot 2024-11-21 at 17 33 31" src="https://github.com/user-attachments/assets/d7d48902-c25a-460a-992f-1a00d13460d5">
 
 3-Créez un répertoire pour le développement de votre serveur
 
